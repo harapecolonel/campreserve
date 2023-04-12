@@ -1,0 +1,16 @@
+h1 {
+  text-align: center;
+}
+
+body {
+  padding: 20px;
+  height: 600px;
+  font-family: "arial";
+  fontsize: 16px;
+}
+
+.form {
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+}
