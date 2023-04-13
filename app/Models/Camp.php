@@ -12,7 +12,7 @@ class Camp extends Model
 
     public static $rules = array(
       'camp_name' => 'required',
-      'adress' => 'required',
+      'address' => 'required',
       'tel' => 'required',
       'explanation' => 'required',
     );
