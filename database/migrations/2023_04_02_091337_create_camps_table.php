@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('camps', function (Blueprint $table) {
             $table->id();
-            $table->string('camp_name')->default('あああ'); 
-            $table->string('adress')->default('あああ');
-            $table->string('tel')->default('あああ');
-            $table->string('explanation')->default('あああ');
+            $table->string('camp_name'); 
+            $table->string('adress');
+            $table->string('tel');
+            $table->string('explanation');
             $table->string('image_path1')->nullable();
             $table->string('image_path2')->nullable();
             $table->string('image_path3')->nullable();
