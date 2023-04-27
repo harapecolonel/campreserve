@@ -11,14 +11,19 @@ class FormController extends Controller
     //
     public function form()
     {
+        
         return view('camp.form');
     }
-    public function form_1(Request $request)
+    
+    public function confirm(Request $request)
     {
-        return view('camp.form_1');
+        $this->validate($request, Accommodation::$rules);
+        $form = $request->all(); //配列だから['key']の形で値を取得する必要がある
+
+        return view('camp.confirm', ['form' => $form]);
     }
     
-    public function complete(Request $request)
+    public function complete()
     {
         return view('camp.complete');
     }

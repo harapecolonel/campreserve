@@ -9,6 +9,6 @@
 <body>
   <form action="{{ route('camp.complete') }}" method="post" enctype="multipart/form-data">
     <p>予約完了</p>
-    <button>TOPへ戻る</button>
+    <a href="{{ route('camp.reserve') }}" role="button" class="btn btn-primary">TOPへ戻る</a>
   </form>
 </body>

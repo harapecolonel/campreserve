@@ -8,7 +8,9 @@
 @section('content')
       <body>
         <h1>予約フォーム</h1>
-        <form action="{{ route('camp.form') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('camp.confirm') }}" method="post" enctype="multipart/form-data">
+          @csrf
+            </ul>
           <div class="form">
             <p>キャンプ場</p>
             <p>利用サイト名</p>
@@ -18,21 +20,25 @@
               </div>
             <label class="col-md-4">メールアドレス</label>
               <div class="col-md-12">
-                <input type="email" class="form-control" name="mailaddress" value="{{ old('address') }}">
+                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+              </div>
+            <label class="col-md-4">利用者数</label>
+              <div class="col-md-12">
+                <input type="text" class="form-control" name="number_of_users"　value="{{ old('number_of_users') }}">
               </div>
             <label class="col-md-4">チェックイン日</label>
               <div class="col-md-12">
-                <input type="date" class="form-control" name="checkin" value="{{ old('checkin') }}">
+                <input type="date" class="form-control" name="check_in_date" value="{{ old('check_in_date') }}">
               </div>
             <label class="col-md-4">チェックイン時間</label>
               <div class="col-md-12">
-                <input type="time" class="form-control" name="checkintime" value="{{ old('checkintime') }}">
+                <input type="time" class="form-control" name="check_in_time" value="{{ old('check_in_time') }}">
               </div>
             <label class="col-md-4">チェックアウト日</label>
               <div class="col-md-12">
-                <input type="date" class="form-control" name="checkout" value="{{ old('checkout') }}">
+                <input type="date" class="form-control" name="check_out_date" value="{{ old('check_out_date') }}">
               </div>
-              <a href="{{ route('camp.form_1') }}" role="button" class="btn btn-primary">確認画面</a>
+              <input type="submit"  class="btn btn-primary" value="確認画面へ">
           </div>
       </form>
       </body>

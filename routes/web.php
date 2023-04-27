@@ -20,15 +20,14 @@ Route::get('/', function () {
 });
 
 Route::controller(ReserveController::class)->group(function() {
-    Route::get('camp/reserve', 'add');
-    Route::get('camp/complete', 'complete');
+    Route::get('camp/reserve', 'add')->name('camp.reserve');
 });
 
 
 Route::controller(FormController::class)->group(function() {
     Route::get('camp/form', 'form')->name('camp.form');
-    Route::get('camp/form_1', 'form_1')->name('camp.form_1');
-     Route::get('camp/complete', 'complete')->name('camp.complete');
+    Route::post('camp/confirm', 'confirm')->name('camp.confirm');
+    Route::get('camp/complete', 'complete')->name('camp.complete');
 });
 
 
