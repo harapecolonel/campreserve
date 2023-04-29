@@ -9,6 +9,12 @@ body {
   fontsize: 16px;
 }
 
+.validation {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+}
+
 .form {
   width: 600px;
   height: 600px;

@@ -113,7 +113,7 @@ return [
     'prohibited_unless' => 'The :attribute field is prohibited unless :other is in :values.',
     'prohibits' => 'The :attribute field prohibits :other from being present.',
     'regex' => 'The :attribute format is invalid.',
-    'required' => ':attribute に入力が必要です。',
+    'required' => ':attribute は必須項目です',
     'required_array_keys' => 'The :attribute field must contain entries for: :values.',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_unless' => 'The :attribute field is required unless :other is in :values.',
@@ -166,11 +166,12 @@ return [
     */
 
     'attributes' => [
-        'check_in' => 'チェックイン',
-        'check_out' => 'チェックアウト',
+        'check_in_date' => 'チェックイン',
+        'check_out_date' => 'チェックアウト',
         'check_in_time' => 'チェックイン時間',
         'number_of_users' => '利用人数',
-        'user_name' => '名前',
-        'mail_adress' => 'メールアドレス',
-    ]
+        'name' => '名前',
+        'email' => 'メールアドレス',
+        ],
+
 ];

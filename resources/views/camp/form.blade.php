@@ -10,7 +10,15 @@
         <h1>予約フォーム</h1>
         <form action="{{ route('camp.confirm') }}" method="post" enctype="multipart/form-data">
           @csrf
-            </ul>
+          <div class="validation">
+             @if (count($errors) > 0)
+              <ul>
+                  @foreach($errors->all() as $e)
+                      <li>{{ $e }}</li>
+                  @endforeach
+              </ul>
+             @endif
+          </div>
           <div class="form">
             <p>キャンプ場</p>
             <p>利用サイト名</p>
