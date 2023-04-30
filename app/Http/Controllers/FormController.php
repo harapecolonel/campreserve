@@ -9,6 +9,11 @@ use App\Models\Accommodation;
 class FormController extends Controller
 {
     //
+     public function add()
+    {
+        return view('camp.reserve');
+    }
+    
     public function form()
     {
         

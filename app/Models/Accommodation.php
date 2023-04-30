@@ -11,14 +11,14 @@ class Accommodation extends Model
     protected $guarded = array('id');
     
     public static $rules = array(
+      // 'camp_id' => 'required',
+      // 'site_id' => 'required',
+      // 'price' => 'required,/
+      'name' => 'required',
+      'email' => 'required',
+      'number_of_users' => 'required',
       'check_in_date' => 'required',
       'check_in_time' => 'required',
       'check_out_date' => 'required',
-      'number_of_users' => 'required',
-      'name' => 'required',
-      'email' => 'required',
-      // 'camp_id' => 'required',
-      // 'site_id' => 'required',
-      // 'price' => 'required,
     );
 }

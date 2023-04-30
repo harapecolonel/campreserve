@@ -7,8 +7,8 @@
 {{-- camp.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
 <body>
-  <form action="{{ route('camp.complete') }}" method="post" enctype="multipart/form-data">
+  <form action="{{ route('camp.add') }}" method="get" enctype="multipart/form-data">
     <p>予約完了</p>
-    <a href="{{ route('camp.reserve') }}" role="button" class="btn btn-primary">TOPへ戻る</a>
+    <input type="submit"  class="btn btn-primary" value="Topへ戻る">
   </form>
 </body>

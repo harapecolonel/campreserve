@@ -22,6 +22,7 @@
           <div class="form">
             <p>キャンプ場</p>
             <p>利用サイト名</p>
+            <p>料金</p>
             <label class="col-md-4">氏名</label>
               <div class="col-md-12">
                 <input type="text" class="form-control" name="name" value="{{ old('name') }}">

@@ -13,6 +13,7 @@
           <div class="form">
             <p>キャンプ場</p>
             <p>利用サイト名</p>
+            <p>料金</p>
             <div class="row">
               <label class="col-md-4">氏名 : {{ $form['name'] }}</label>
               <div class="col-md-8">
