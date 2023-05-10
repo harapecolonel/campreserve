@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Accommodation;
 
+use App\Models\User;
+
 class FormController extends Controller
 {
     //
@@ -28,8 +30,16 @@ class FormController extends Controller
         return view('camp.confirm', ['form' => $form]);
     }
     
-    public function complete()
+    public function complete(Request $request)
     {
+        $accommodation = new Accommodation;
+        
+        $form = $request->all();
+        
+        $accommodation->fill($form);
+        $accommodation->save();
+        
+        
         return view('camp.complete');
     }
 }

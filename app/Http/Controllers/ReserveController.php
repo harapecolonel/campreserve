@@ -7,8 +7,5 @@ use Illuminate\Http\Request;
 class ReserveController extends Controller
 {
     //
-    public function add()
-    {
-        return view('camp.reserve');
-    }
+    
 }
