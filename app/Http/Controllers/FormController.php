@@ -32,14 +32,29 @@ class FormController extends Controller
     
     public function complete(Request $request)
     {
-        $accommodation = new Accommodation;
-        
-        $form = $request->all();
-        
-        $accommodation->fill($form);
-        $accommodation->save();
-        
         
         return view('camp.complete');
+    }
+    
+    public function register(Request $request)
+    {
+        $form = $request->all();
+        
+        $user = new User;
+        $user->name = $form['name'];
+        $user->email = $form['email'];
+        $user->password = encrypt('1234');
+        $user->save();
+        //dd($user->id);
+    
+        $accommodation = new Accommodation;
+        $accommodation->check_in_datetime = $form['check_in_datetime'];
+        $accommodation->check_out_date = $form['check_out_date'];
+        $accommodation->number_of_users = $form['number_of_users'];
+        $accommodation->camp_id = 1;
+        $accommodation->site_id = 1;
+        $accommodation->user_id = $user->id;
+        $accommodation->price = 1000;
+        $accommodation->save();
     }
 }

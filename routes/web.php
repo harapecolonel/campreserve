@@ -26,6 +26,7 @@ Route::controller(FormController::class)->group(function() {
     Route::get('camp/form', 'form')->name('camp.form');
     Route::post('camp/confirm', 'confirm')->name('camp.confirm');
     Route::get('camp/complete', 'complete')->name('camp.complete');
+    Route::post('camp/complete', 'register')->name('camp.register');
 });
 
 

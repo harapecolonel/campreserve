@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('accommodations', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('check_in_date'); 
-            $table->dateTime('check_in_time');
+            $table->dateTime('check_in_datetime'); 
             $table->dateTime('check_out_date');
             $table->integer('number_of_users');
             $table->bigInteger('camp_id');

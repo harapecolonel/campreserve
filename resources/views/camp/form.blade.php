@@ -10,15 +10,6 @@
         <h1>予約フォーム</h1>
         <form action="{{ route('camp.confirm') }}" method="post" enctype="multipart/form-data">
           @csrf
-          <div class="validation">
-             @if (count($errors) > 0)
-              <ul>
-                  @foreach($errors->all() as $e)
-                      <li>{{ $e }}</li>
-                  @endforeach
-              </ul>
-             @endif
-          </div>
           <div class="form">
             <p>キャンプ場</p>
             <p>利用サイト名</p>
@@ -37,17 +28,26 @@
               </div>
             <label class="col-md-4">チェックイン日</label>
               <div class="col-md-12">
-                <input type="date" class="form-control" name="check_in_date" value="{{ old('check_in_date') }}">
+                <input type="date" class="form-control" name="check_in_datetine" value="{{ old('check_in_datetime') }}">
               </div>
             <label class="col-md-4">チェックイン時間</label>
               <div class="col-md-12">
-                <input type="time" class="form-control" name="check_in_time" value="{{ old('check_in_time') }}">
+                <input type="time" class="form-control" name="check_in_datetime" value="{{ old('check_in_datetime') }}">
               </div>
             <label class="col-md-4">チェックアウト日</label>
               <div class="col-md-12">
                 <input type="date" class="form-control" name="check_out_date" value="{{ old('check_out_date') }}">
               </div>
               <input type="submit"  class="btn btn-primary" value="確認画面へ">
+            <div class="validation">
+             @if (count($errors) > 0)
+              <ul>
+                  @foreach($errors->all() as $e)
+                      <li>{{ $e }}</li>
+                  @endforeach
+              </ul>
+             @endif
+            </div>
           </div>
       </form>
       </body>
