@@ -27,13 +27,13 @@
               <div class="col-md-12">
                 <input type="hidden"  name="number_of_users" value="{{ $form['number_of_users'] }}">
               </div>
-            <label class="col-md-4">チェックイン日 : {{ $form['check_in_datetime'] }}</label>
+            <label class="col-md-4">チェックイン日 : {{ $form['check_in_date'] }}</label>
               <div class="col-md-12">
-                <input type="hidden"  name="check_in_datetime" value="{{ $form['check_in_datetime'] }}">
+                <input type="hidden"  name="check_in_date" value="{{ $form['check_in_date'] }}">
               </div>
-            <label class="col-md-4">チェックイン時間 : {{ $form['check_in_datetime'] }}</label>
+            <label class="col-md-4">チェックイン時間 : {{ $form['check_in_time'] }}</label>
               <div class="col-md-12">
-                <input type="hidden"  name="check_in_datetime" value="{{ $form['check_in_datetime'] }}">
+                <input type="hidden"  name="check_in_time" value="{{ $form['check_in_time'] }}">
               </div>
             <label class="col-md-8">チェックアウト日 : {{ $form['check_out_date'] }}</label>
               <div class="col-md-12">

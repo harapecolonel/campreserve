@@ -7,6 +7,8 @@
 
 {{-- camp.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
+  <body>
+    <form action="{{ route('camp.add') }}" method="get" enctype="multipart/form-data">
     <div class="container-fluid">
       <div class="row">
           <h1>camp</h1>
@@ -135,4 +137,6 @@
         </div>
       </div>
     </div>
+    </form>
+  </body>
 @endsection

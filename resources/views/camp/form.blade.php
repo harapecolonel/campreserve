@@ -28,11 +28,11 @@
               </div>
             <label class="col-md-4">チェックイン日</label>
               <div class="col-md-12">
-                <input type="date" class="form-control" name="check_in_datetine" value="{{ old('check_in_datetime') }}">
+                <input type="date" class="form-control" name="check_in_date" value="{{ old('check_in_date') }}">
               </div>
             <label class="col-md-4">チェックイン時間</label>
               <div class="col-md-12">
-                <input type="time" class="form-control" name="check_in_datetime" value="{{ old('check_in_datetime') }}">
+                <input type="time" class="form-control" name="check_in_time" value="{{ old('check_in_time') }}">
               </div>
             <label class="col-md-4">チェックアウト日</label>
               <div class="col-md-12">

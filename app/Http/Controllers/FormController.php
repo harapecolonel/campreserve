@@ -30,11 +30,6 @@ class FormController extends Controller
         return view('camp.confirm', ['form' => $form]);
     }
     
-    public function complete(Request $request)
-    {
-        
-        return view('camp.complete');
-    }
     
     public function register(Request $request)
     {
@@ -48,7 +43,7 @@ class FormController extends Controller
         //dd($user->id);
     
         $accommodation = new Accommodation;
-        $accommodation->check_in_datetime = $form['check_in_datetime'];
+        $accommodation->check_in_datetime = $form['check_in_date'] . ' ' . $form['check_in_time'];
         $accommodation->check_out_date = $form['check_out_date'];
         $accommodation->number_of_users = $form['number_of_users'];
         $accommodation->camp_id = 1;
@@ -56,5 +51,13 @@ class FormController extends Controller
         $accommodation->user_id = $user->id;
         $accommodation->price = 1000;
         $accommodation->save();
+        
+        return view('camp.complete');
+    }
+    
+     public function complete(Request $request)
+    {
+        
+        return view('camp.complete');
     }
 }
