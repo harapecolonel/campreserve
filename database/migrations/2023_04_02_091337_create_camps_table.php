@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('camps', function (Blueprint $table) {
             $table->id();
             $table->string('camp_name'); 
-            $table->string('adress');
+            $table->string('address');
             $table->string('tel');
             $table->string('explanation');
             $table->string('image_path1')->nullable();

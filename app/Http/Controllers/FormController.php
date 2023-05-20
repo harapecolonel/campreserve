@@ -8,13 +8,23 @@ use App\Models\Accommodation;
 
 use App\Models\User;
 
+use App\Models\Camp;
+
+use Carbon\Carbon;
+
 class FormController extends Controller
 {
     //
-     public function add()
+     public function camp($campId,$siteId)
     {
-        return view('camp.reserve');
+        $camp = Camp::find($campId);
+        //現在の年、月のカレンダーデータを取得する
+        $month = Carbon::now()->month;
+        $year = Carbon::now()->year;
+        $calendar = $this->getCalendarDates($year, $month);
+        return view('camp.index', ['camp' => $camp,'dates' => $calendar,'currentMonth' => $month]);
     }
+    
     
     public function form()
     {
@@ -59,5 +69,24 @@ class FormController extends Controller
     {
         
         return view('camp.complete');
+    }
+    
+    private function getCalendarDates($year, $month)
+    {
+        
+        $dateStr = sprintf('%04d-%02d-01', $year, $month);
+        $date = new Carbon($dateStr);
+        // カレンダーを四角形にするため、前月となる左上の隙間用のデータを入れるためずらす
+        $date->subDay($date->dayOfWeek);
+        // 同上。右下の隙間のための計算。
+        $count = 31 + $date->dayOfWeek;
+        $count = ceil($count / 7) * 7;
+        $dates = [];
+
+        for ($i = 0; $i < $count; $i++, $date->addDay()) {
+            // copyしないと全部同じオブジェクトを入れてしまうことになる
+            $dates[] = $date->copy();
+        }
+        return $dates;
     }
 }

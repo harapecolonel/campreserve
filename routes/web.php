@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 
 Route::controller(FormController::class)->group(function() {
-    Route::get('camp/reserve', 'add')->name('camp.add');
+    Route::get('camp/{campId}/{siteId}', 'camp')->name('camp.index');
     Route::post('camp/reserve', 'reserve')->name('camp.reserve');
     Route::get('camp/form', 'form')->name('camp.form');
     Route::post('camp/confirm', 'confirm')->name('camp.confirm');
