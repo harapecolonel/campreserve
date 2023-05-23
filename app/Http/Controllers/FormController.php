@@ -10,6 +10,8 @@ use App\Models\User;
 
 use App\Models\Camp;
 
+use App\Models\Site;
+
 use Carbon\Carbon;
 
 class FormController extends Controller
@@ -18,18 +20,23 @@ class FormController extends Controller
      public function camp($campId,$siteId)
     {
         $camp = Camp::find($campId);
+        $site = Site::find($siteId);
         //現在の年、月のカレンダーデータを取得する
         $month = Carbon::now()->month;
         $year = Carbon::now()->year;
         $calendar = $this->getCalendarDates($year, $month);
-        return view('camp.index', ['camp' => $camp,'dates' => $calendar,'currentMonth' => $month]);
+        return view('camp.index', ['camp' => $camp,'site' => $site,'dates' => $calendar,'currentMonth' => $month]);
     }
     
     
-    public function form()
+    public function form($campId,$siteId,$date)
     {
+        $camp = Camp::find($campId);
+        $site = Site::find($siteId);
+        $camp_name = Camp::find($campId);
+        $accommodation = Accommodation::find($campId)
         
-        return view('camp.form');
+        return view('camp.form',['camp' => $camp,'site' => $site,'date' =>$date]);
     }
     
     public function confirm(Request $request)

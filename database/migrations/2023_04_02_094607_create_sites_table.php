@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('sites', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('camp_id');
-            $table->bigInteger('site_id');
+            $table->string('site_name'); 
             $table->string('explanation');
             $table->integer('weekdayrate');
             $table->integer('holidayrate');

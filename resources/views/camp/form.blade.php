@@ -11,8 +11,12 @@
         <form action="{{ route('camp.confirm') }}" method="post" enctype="multipart/form-data">
           @csrf
           <div class="form">
-            <p>キャンプ場</p>
-            <p>利用サイト名</p>
+            <label class="col-md-4">キャンプ場: {{ $camp->camp_name }}</label>
+            <div class="col-md-12">
+            <input type="hidden" class="form-control" name="camp_name" value="{{ $camp->camp_name }}">
+            <label class="col-md-4">サイト場: {{ $site->site_name }}</label>
+            <div class="col-md-12">
+            <input type="hidden" class="form-control" name="camp_name" value="{{ $site->site_name }}">
             <p>料金</p>
             <label class="col-md-4">氏名</label>
               <div class="col-md-12">
@@ -26,9 +30,9 @@
               <div class="col-md-12">
                 <input type="text" class="form-control" name="number_of_users"　value="{{ old('number_of_users') }}">
               </div>
-            <label class="col-md-4">チェックイン日</label>
+            <label class="col-md-4">チェックイン日:{{ $accommodation->check_in_date }}</label>
               <div class="col-md-12">
-                <input type="date" class="form-control" name="check_in_date" value="{{ old('check_in_date') }}">
+                <input type="hidden" class="form-control" name="check_in_date" value="{{ $accommodation->check_in_date }}">
               </div>
             <label class="col-md-4">チェックイン時間</label>
               <div class="col-md-12">

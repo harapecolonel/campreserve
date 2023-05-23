@@ -12,7 +12,7 @@ class Site extends Model
 
     public static $rules = array(
       'camp_id' => 'required',
-      'site_id' => 'required',
+      'site_name' => 'required',
       'explanation' => 'required',
       'weekdayrate' => 'required',
       'holidayrate' => 'required',

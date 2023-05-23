@@ -47,7 +47,9 @@
                               class="bg-secondary"
                               @endif
                             >
-                      
+                            
+                            <a href="{{ route('camp.form', ['campId' => $camp->id, 'siteId' => $site->id, 'date' => $date->format('Y-m-d')]) }}">{{ $date->day }}</a> 
+                  
                             </td>
                           @if ($date->dayOfWeek == 6)
                           </tr>
@@ -55,6 +57,7 @@
                           @endforeach
                         </tbody>
                       </table>
+
                     <!--<p>May 2023</p>-->
                     <!--<table>-->
                     <!--  <tr>-->
@@ -116,8 +119,6 @@
                 </div>
                 <div class="right-contents">
                   <div class="facilities">
-                    <h2>施設情報</h2>
-                    <p>あふれる自然を感じられるキャンプ場です。1日限定3組。</p>
                     <table>
                       <tr>
                         <th>キャンプ場名</th>
@@ -134,6 +135,8 @@
                       <tr>
                         <th>説明</th>
                         <td>{{ $camp->explanation }}</td>
+                        <!--<h2>施設情報</h2>-->
+                        <!--<p>あふれる自然を感じられるキャンプ場です。1日限定3組。</p>-->
                         <!--<td>施設利用料・駐車場代・ゴミ回収費・シャワー代込み<br>-->
                         <!-- ・展望サイト5000円〜<br>-->
                         <!-- ・森サイト3000円〜<br>-->
