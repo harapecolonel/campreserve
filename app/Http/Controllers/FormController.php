@@ -29,26 +29,30 @@ class FormController extends Controller
     }
     
     
-    public function form($campId,$siteId,$date)
+    public function form(Request $request,$campId,$siteId,$date)
     {
         $camp = Camp::find($campId);
         $site = Site::find($siteId);
-        $camp_name = Camp::find($campId);
-        $accommodation = Accommodation::find($campId)
+        $date = new Carbon($date);
+       
         
-        return view('camp.form',['camp' => $camp,'site' => $site,'date' =>$date]);
+        return view('camp.form',['camp' => $camp,'site' => $site,'date' => $date]);
     }
     
-    public function confirm(Request $request)
+    public function confirm(Request $request,$campId,$siteId,$date)
     {
         $this->validate($request, Accommodation::$rules);
         $form = $request->all(); //配列だから['key']の形で値を取得する必要がある
+        $camp = Camp::find($campId);
+        $site = Site::find($siteId);
+        $date = new Carbon($date);
+        
 
-        return view('camp.confirm', ['form' => $form]);
+        return view('camp.confirm', ['form' => $form,'camp' => $camp,'site' => $site,'date' => $date]);
     }
     
     
-    public function register(Request $request)
+    public function register(Request $request,$campId,$siteId)
     {
         $form = $request->all();
         
@@ -69,7 +73,10 @@ class FormController extends Controller
         $accommodation->price = 1000;
         $accommodation->save();
         
-        return view('camp.complete');
+        $camp = Camp::find($campId);
+        $site = Site::find($siteId);
+        
+        return view('camp.complete',['camp' => $camp,'site' => $site]);
     }
     
      public function complete(Request $request)
