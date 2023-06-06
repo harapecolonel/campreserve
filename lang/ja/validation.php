@@ -169,9 +169,7 @@ return [
         'name' => '名前',
         'email' => 'メールアドレス',
         'number_of_users' => '利用者数',
-        'check_in_date' => 'チェックイン日',
         'check_in_time' => 'チェックイン時間',
-        'check_out_date' => 'チェックアウト日',
         'price' => '料金',
         ],
 

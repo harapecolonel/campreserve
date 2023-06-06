@@ -34,6 +34,7 @@ class FormController extends Controller
         $camp = Camp::find($campId);
         $site = Site::find($siteId);
         $date = new Carbon($date);
+        
        
         
         return view('camp.form',['camp' => $camp,'site' => $site,'date' => $date]);
@@ -67,10 +68,10 @@ class FormController extends Controller
         $accommodation->check_in_datetime = $form['check_in_date'] . ' ' . $form['check_in_time'];
         $accommodation->check_out_date = $form['check_out_date'];
         $accommodation->number_of_users = $form['number_of_users'];
-        $accommodation->camp_id = 1;
-        $accommodation->site_id = 1;
+        $accommodation->camp_id = $campId;
+        $accommodation->site_id = $siteId;
         $accommodation->user_id = $user->id;
-        $accommodation->price = 1000;
+        $accommodation->price = $form['price'];
         $accommodation->save();
         
         $camp = Camp::find($campId);

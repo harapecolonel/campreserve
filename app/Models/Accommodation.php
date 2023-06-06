@@ -17,8 +17,7 @@ class Accommodation extends Model
       'name' => 'required',
       'email' => 'required',
       'number_of_users' => 'required',
-      'check_in_date' => 'required',
       'check_in_time' => 'required',
-      'check_out_date' => 'required',
+    
     );
 }

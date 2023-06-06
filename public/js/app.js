@@ -1047,10 +1047,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!**********************************!*\
   !*** ./resources/sass/form.scss ***!
   \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZXNvdXJjZXMvc2Fzcy9mb3JtLnNjc3MuanMiLCJtYXBwaW5ncyI6IjtBQUFBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vcmVzb3VyY2VzL3Nhc3MvZm9ybS5zY3NzP2U0ZGQiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5leHBvcnQge307Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./resources/sass/form.scss\n");
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"}\".\n   ╷\n27 │ }\n   │  ^\n   ╵\n  resources/sass/form.scss 27:2  root stylesheet\n    at processResult (/home/ec2-user/environment/camp-reserve/node_modules/webpack/lib/NormalModule.js:760:19)\n    at /home/ec2-user/environment/camp-reserve/node_modules/webpack/lib/NormalModule.js:862:5\n    at /home/ec2-user/environment/camp-reserve/node_modules/loader-runner/lib/LoaderRunner.js:400:11\n    at /home/ec2-user/environment/camp-reserve/node_modules/loader-runner/lib/LoaderRunner.js:252:18\n    at context.callback (/home/ec2-user/environment/camp-reserve/node_modules/loader-runner/lib/LoaderRunner.js:124:13)\n    at Object.loader (/home/ec2-user/environment/camp-reserve/node_modules/sass-loader/dist/index.js:69:5)");
 
 /***/ }),
 
@@ -1200,7 +1199,6 @@ eval("// shim for using process in browser\nvar process = module.exports = {};\n
 /******/ 			"css/app": 0,
 /******/ 			"css/complete": 0,
 /******/ 			"css/form1": 0,
-/******/ 			"css/form": 0,
 /******/ 			"css/camp": 0
 /******/ 		};
 /******/ 		
@@ -1251,12 +1249,12 @@ eval("// shim for using process in browser\nvar process = module.exports = {};\n
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/complete","css/form1","css/form","css/camp"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/complete","css/form1","css/form","css/camp"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/complete","css/form1","css/form","css/camp"], () => (__webpack_require__("./resources/sass/camp.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/complete","css/form1","css/form","css/camp"], () => (__webpack_require__("./resources/sass/form.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/complete","css/form1","css/form","css/camp"], () => (__webpack_require__("./resources/sass/form1.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/complete","css/form1","css/form","css/camp"], () => (__webpack_require__("./resources/sass/complete.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/complete","css/form1","css/camp"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/complete","css/form1","css/camp"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/complete","css/form1","css/camp"], () => (__webpack_require__("./resources/sass/camp.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/complete","css/form1","css/camp"], () => (__webpack_require__("./resources/sass/form.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/complete","css/form1","css/camp"], () => (__webpack_require__("./resources/sass/form1.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/complete","css/form1","css/camp"], () => (__webpack_require__("./resources/sass/complete.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
