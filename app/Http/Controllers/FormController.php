@@ -25,6 +25,15 @@ class FormController extends Controller
         $month = Carbon::now()->month;
         $year = Carbon::now()->year;
         $calendar = $this->getCalendarDates($year, $month);
+        
+        $accommodations = Accommodation::where([
+            ['camp_id',$campId],
+            ['site_id',$siteId],
+            ['check_in_datetime','>',Carbon::now()->startOfMonth()->toDateString(). ' 00:00:00'],
+            ['check_in_datetime','<',Carbon::now()->endOfMonth()->toDateString(). ' 23:59:59'],
+        ])->get();
+
+        
         return view('camp.index', ['camp' => $camp,'site' => $site,'dates' => $calendar,'currentMonth' => $month]);
     }
     
@@ -102,6 +111,16 @@ class FormController extends Controller
             // copyしないと全部同じオブジェクトを入れてしまうことになる
             $dates[] = $date->copy();
         }
+        
+         //月始
+        //dd(Carbon::now()->startOfMonth()->toDateString(). ' 00:00:00');
+        
+        //月末
+        //dd(Carbon::now()->endOfMonth()->toDateString(). ' 23:59:59');
+        
+       
+        
         return $dates;
+        
     }
 }
