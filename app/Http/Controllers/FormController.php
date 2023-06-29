@@ -32,7 +32,13 @@ class FormController extends Controller
             ['check_in_datetime','>',Carbon::now()->startOfMonth()->toDateString(). ' 00:00:00'],
             ['check_in_datetime','<',Carbon::now()->endOfMonth()->toDateString(). ' 23:59:59'],
         ])->get();
-
+       
+       $check_in_date = ['check_in_datetime'];
+       $date = new Carbon();
+       
+       if($check_in_date->eq($date)) {
+        echo '○';
+       }
         
         return view('camp.index', ['camp' => $camp,'site' => $site,'dates' => $calendar,'currentMonth' => $month]);
     }

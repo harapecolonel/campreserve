@@ -49,6 +49,7 @@
                             >
                             
                             <a href="{{ route('camp.form', ['campId' => $camp->id, 'siteId' => $site->id, 'date' => $date->format('Y-m-d')]) }}">{{ $date->day }}</a> 
+                          
                   
                             </td>
                           @if ($date->dayOfWeek == 6)
